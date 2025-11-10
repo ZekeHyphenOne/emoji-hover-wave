@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover-Wave Emoji</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #fceabb, #f8b500);
+            font-family: Arial, sans-serif;
+        }
+
+        .emoji {
+            font-size: 100px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            transition: transform 0.2s, color 0.3s;
+        }
+
+        .emoji:hover {
+            color: #ff4b5c;
+            animation: bounce 2s infinite, wave 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji">🤌</div>
+</body>
+</html>
